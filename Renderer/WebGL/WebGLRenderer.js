@@ -112,7 +112,13 @@ export class WebGLRenderer extends Renderer {
 	 * @abstract
 	 * @param {String} shaderPath
 	 */
-	async build(shaderPath) {}
+	async build(shaderPath) {
+		if (!this._canvas) {
+			throw new ReferenceError("The canvas must be built before calling super.build.");
+		}
+
+		this._context = this._canvas.getContext("webgl2");
+	}
 
 	/**
 	 * @param {String} vertexShaderSource
@@ -201,7 +207,7 @@ export class WebGLRenderer extends Renderer {
 	}
 
 	/**
-	 * @param {import("../Loader/TextureLoader.js").Image[]} textures
+	 * @param {import("../../Loader/TextureLoader.js").Image[]} textures
 	 * @param {Boolean} generateMipmaps
 	 * @throws {RangeError} if a texture is larger than `MAX_TEXTURE_SIZE`
 	 */
