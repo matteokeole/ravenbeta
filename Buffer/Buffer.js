@@ -5,11 +5,6 @@ export class Buffer {
 	/**
 	 * @type {Object}
 	 */
-	_context;
-
-	/**
-	 * @type {Object}
-	 */
 	_buffer;
 
 	/**

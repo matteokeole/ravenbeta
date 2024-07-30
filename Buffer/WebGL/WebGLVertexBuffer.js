@@ -1,11 +1,10 @@
-import {VertexBuffer} from "../VertexBuffer.js";
+import {VertexBuffer} from "../index.js";
 
 export class WebGLVertexBuffer extends VertexBuffer {
 	/**
-	 * @override
 	 * @type {WebGL2RenderingContext}
 	 */
-	_context = null;
+	_context;
 
 	/**
 	 * @param {WebGL2RenderingContext} context
