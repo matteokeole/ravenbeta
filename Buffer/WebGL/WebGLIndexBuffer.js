@@ -1,11 +1,10 @@
-import {IndexBuffer} from "../IndexBuffer.js";
+import {IndexBuffer} from "../index.js";
 
 export class WebGLIndexBuffer extends IndexBuffer {
 	/**
-	 * @override
 	 * @type {WebGL2RenderingContext}
 	 */
-	_context = null;
+	_context;
 
 	/**
 	 * @override
